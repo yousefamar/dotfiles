@@ -1,0 +1,33 @@
+[user]
+	name = Yousef Amar
+	email = yousefamar@gmail.com
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+[alias]
+	s = status
+	aa = add -A
+	a = add
+	c = commit
+	cm = commit -m
+	poa = push -u origin --all
+	rao = remote add origin
+	ch = checkout
+	chb = checkout -b
+	d = diff
+	b = branch
+	m = merge
+	ls = ls-tree --full-tree -r HEAD
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	up = !git fetch && git rebase --autostash FETCH_HEAD
+[merge]
+	tool = kdiff3
+	conflictstyle = diff3
+	#ff = false
+[mergetool]
+	prompt = false
+	keepBackup = false
+[credential]
+	helper = cache
+[diff]
+	tool = vimdiff
