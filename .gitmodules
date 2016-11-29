@@ -1,0 +1,6 @@
+[submodule "app/zsh-plugins/zsh-history-substring-search"]
+	path = app/zsh-plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "app/zsh-plugins/zsh-git-prompt"]
+	path = app/zsh-plugins/zsh-git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt.git
