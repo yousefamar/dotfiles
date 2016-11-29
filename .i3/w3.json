@@ -1,0 +1,45 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 314,
+       "width": 482,
+       "x": 0,
+       "y": 0
+    },
+    "name": "irssi",
+    "percent": 0.9,
+    "swallows": [
+       {
+           "class": "^Evilvte$",
+           "instance": "^evilvte$",
+           "title": "^irssi$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 314,
+       "width": 482,
+       "x": 0,
+       "y": 0
+    },
+    "name": "irssi nicklist",
+    "percent": 0.1,
+    "swallows": [
+       {
+           "class": "^Evilvte$",
+           "instance": "^evilvte$",
+           "title": "^irssi\\ nicklist$"
+       }
+    ],
+    "type": "con"
+}
+
