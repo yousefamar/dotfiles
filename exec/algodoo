@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+wine ~/.wine/drive_c/Program\ Files/Algodoo/Algodoo.exe

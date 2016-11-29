@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+wine start ~/.wine/drive_c/Soldat/soldat.exe
