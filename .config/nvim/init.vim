@@ -1,47 +1,42 @@
-" Vundle stuff
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Plugins
+call plug#begin()
 
-Plugin 'gmarik/Vundle.vim'
-Plugin 'gkz/vim-ls'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
+Plug 'gkz/vim-ls'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'kien/ctrlp.vim'
 let g:ctrlp_prompt_mappings = {
 \	'AcceptSelection("e")': ['<c-t>'],
 \	'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
 \}
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'gerw/vim-latex-suite'
-Plugin 'ervandew/supertab'
-Plugin 'Raimondi/delimitMate'
+Plug 'airblade/vim-gitgutter'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'plasticboy/vim-markdown'
+Plug 'gerw/vim-latex-suite'
+Plug 'ervandew/supertab'
+Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr=1
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
-Plugin 'severin-lemaignan/vim-minimap'
-Plugin 'majutsushi/tagbar'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'nicklasos/vim-jsx-riot'
+Plug 'severin-lemaignan/vim-minimap'
+Plug 'majutsushi/tagbar'
+Plug 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-pug'
+Plug 'nicklasos/vim-jsx-riot'
 au BufNewFile,BufRead *.tag setlocal ft=javascript
-Plugin 'wavded/vim-stylus'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'wavded/vim-stylus'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-s>"
 let g:UltiSnipsJumpForwardTrigger="<c-e>"
 let g:UltiSnipsJumpBackwardTrigger="<c-q>"
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'tpope/vim-abolish'
-Plugin 'suan/vim-instant-markdown'
+Plug 'tikhomirov/vim-glsl'
+Plug 'tpope/vim-abolish'
+Plug 'suan/vim-instant-markdown'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " General
 set title
