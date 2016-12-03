@@ -9,12 +9,14 @@ setopt prompt_subst
 source /home/amar/app/zsh-plugins/zsh-git-prompt/zshrc.sh
 PROMPT='%2~ $(git_super_status)» '
 
-export EDITOR="vim"
-export VISUAL="vim"
+export TERMINAL="st"
+export EDITOR="nvim"
+export VISUAL="nvim"
 export BROWSER="google-chrome-stable"
 #"uzbl-browser"
 export PAGER="less"
 export II_PASSWORD="bashbash"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Environment variables
 PATH="$PATH:/home/amar/exec"
@@ -26,7 +28,7 @@ export PERL5LIB="/home/amar/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL_LOCAL_LIB_ROOT="/home/amar/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
 export PERL_MB_OPT="--install_base \"/home/amar/app/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/amar/app/perl5"
-export LD_PRELOAD="/usr/local/src/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
+#export LD_PRELOAD="/usr/local/src/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/:/opt/cuda/lib64"
 export WINEARCH=win32
 
@@ -43,7 +45,7 @@ alias la='ls -a --color'
 alias ll='ls -l --color'
 alias md='mkdir'
 alias g='git'
-alias v='vim'
+alias v='nvim'
 alias sv='sudoedit'
 alias vlc='vlc --no-color'
 alias ci='xclip -selection clipboard'
@@ -60,6 +62,7 @@ alias uz='unzip'
 alias mpv='mpv --input-file=/home/amar/.local/share/mpv/cmd-input'
 function ipi { curl ipinfo.io/"$@" }
 function cvii { converse-ii "$@" & }
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 
 alias nicks='cat /home/amar/.irssi/nicklistfifo'
 
@@ -81,9 +84,10 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # More keybindings
+unsetopt MULTIBYTE
 autoload zkbd
-#[[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE ]] && zkbd
-source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-$VENDOR-$OSTYPE
+[[ ! -f ${ZDOTDIR:-$HOME}/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE} ]] && zkbd
+source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode

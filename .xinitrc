@@ -1,7 +1,8 @@
-setxkbmap -layout de -variant mac -option 'ctrl:nocaps'
+setxkbmap -layout gb -option 'ctrl:nocaps'
 if [ -s ~/.Xmodmap ]; then
 	xmodmap ~/.Xmodmap
 fi
-sh ~/.fehbg &
+#sh ~/.fehbg &
 #unclutter -grab &
-exec i3 -V >> ~/.i3/i3log 2>&1
+xcompmgr -c &
+exec i3 -V >> ~/.config/i3/i3log 2>&1
