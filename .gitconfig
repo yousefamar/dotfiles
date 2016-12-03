@@ -21,13 +21,16 @@
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 	up = !git fetch && git rebase --autostash FETCH_HEAD
 [merge]
-	tool = kdiff3
-	conflictstyle = diff3
+	tool = nvimdiff
 	#ff = false
+[mergetool]
+	prompt = true
+[mergetool "nvimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [mergetool]
 	prompt = false
 	keepBackup = false
 [credential]
 	helper = cache
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
