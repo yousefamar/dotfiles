@@ -162,8 +162,8 @@ bar {
 new_window 1pixel
 
 # Media keys
-bindsym XF86MonBrightnessDown exec echo $(($(cat /sys/class/backlight/gmux_backlight/brightness)-$(($(cat /sys/class/backlight/gmux_backlight/max_brightness)/10)))) >> /sys/class/backlight/gmux_backlight/brightness
-bindsym XF86MonBrightnessUp   exec echo $(($(cat /sys/class/backlight/gmux_backlight/brightness)+$(($(cat /sys/class/backlight/gmux_backlight/max_brightness)/10)))) >> /sys/class/backlight/gmux_backlight/brightness
+bindsym XF86MonBrightnessDown exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)-$(($(cat /sys/class/backlight/intel_backlight/max_brightness)/10)))) >> /sys/class/backlight/intel_backlight/brightness
+bindsym XF86MonBrightnessUp   exec echo $(($(cat /sys/class/backlight/intel_backlight/brightness)+$(($(cat /sys/class/backlight/intel_backlight/max_brightness)/10)))) >> /sys/class/backlight/intel_backlight/brightness
 #bindsym XF86AudioPlay         exec wget -O- -q -t 1 --user '' --password letmevlsee "http://127.0.0.1:8080/requests/status.xml?command=pl_pause"
 #bindsym XF86AudioPrev         exec wget -O- -q -t 1 --user '' --password letmevlsee "http://127.0.0.1:8080/requests/status.xml?command=pl_previous"
 #bindsym XF86AudioNext         exec wget -O- -q -t 1 --user '' --password letmevlsee "http://127.0.0.1:8080/requests/status.xml?command=pl_next"
