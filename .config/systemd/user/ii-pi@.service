@@ -1,0 +1,10 @@
+# Usage: systemctl --user ii@NETWORK.service
+
+[Unit]
+Description=ii-pi
+
+[Service]
+ExecStart=/usr/bin/sh -c "/usr/bin/mkdir -p /home/amar/ii/%i && PASS=bashbash /usr/bin/ii -i /home/amar/ii/%i -e ssl -s pi.amar.io -p 6697 -n amar/%i -k PASS"
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,8 @@
+[Unit]
+Description=ii-watch
+
+[Service]
+ExecStart=/usr/bin/sh -c "/home/%i/exec/ii-watch /home/%i/ii '\<(%i|drmr)\>'"
+
+[Install]
+WantedBy=default.target
