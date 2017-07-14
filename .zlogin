@@ -15,6 +15,5 @@
 
 #archey
 echo "Welcome Yousef, master of space and time!\n"
-sudo chmod 777 /sys/class/backlight/intel_backlight/brightness
 #dropbox start
-#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx -bs
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx -bs

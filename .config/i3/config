@@ -32,8 +32,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec st
 
+# start a large terminal
+bindsym $mod+Shift+Return exec st -f "Inconsolata:size=24"
+
 # start an ssh connection to amar.io
-bindsym $mod+Shift+Return exec st ssh amar.io
+bindsym $mod+Shift+Ctrl+Return exec st ssh amar.io
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,12 +174,12 @@ bindsym XF86AudioPlay         exec /home/amar/.local/share/mpv/toggle-pause.sh
 bindsym XF86AudioPrev         exec echo '{ "command": ["playlist-prev"] }' > /home/amar/.local/share/mpv/cmd-input
 bindsym XF86AudioNext         exec echo '{ "command": ["playlist-next"] }' > /home/amar/.local/share/mpv/cmd-input
 bindsym XF86AudioMute         exec amixer -q set Master toggle
-bindsym XF86AudioLowerVolume  exec amixer -q set Master 5-
-bindsym XF86AudioRaiseVolume  exec amixer -q set Master 5+
+bindsym XF86AudioLowerVolume  exec amixer -q set Master 5%-
+bindsym XF86AudioRaiseVolume  exec amixer -q set Master 5%+
 bindsym Print                 exec imgur-screenshot
 
 # Hotkeys
-#bindsym $mod+plus exec uzbl-browser
+bindsym $mod+numbersign exec surf
 #bindsym $mod+Ctrl+i exec evilvte -title irssi -e irssi; exec evilvte -title 'irssi nicklist' -e cat /home/amar/.irssi/nicklistfifo
 bindsym $mod+c exec lock
 

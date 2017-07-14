@@ -3,7 +3,7 @@
 	email = yousefamar@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = vim
+	editor = nvim
 [alias]
 	s = status
 	aa = add -A
@@ -12,6 +12,7 @@
 	cm = commit -m
 	poa = push -u origin --all
 	rao = remote add origin
+	rau = remote add upstream
 	ch = checkout
 	chb = checkout -b
 	d = diff

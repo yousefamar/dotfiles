@@ -15,14 +15,17 @@ export VISUAL="nvim"
 export BROWSER="google-chrome-stable"
 #"uzbl-browser"
 export PAGER="less"
-export II_PASSWORD="bashbash"
+export II_PASSWORD=""
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export HISTORY_IGNORE=" *"
 
 # Environment variables
 PATH="$PATH:/home/amar/exec"
 PATH="$PATH:/opt/cuda/bin"
 PATH="$PATH:/home/amar/app/perl5/bin"
-PATH="$PATH:/home/amar/.gem/ruby/2.3.0/bin"
+PATH="$PATH:/home/amar/.gem/ruby/2.4.0/bin"
 export PATH
 export PERL5LIB="/home/amar/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL_LOCAL_LIB_ROOT="/home/amar/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
@@ -31,9 +34,12 @@ export PERL_MM_OPT="INSTALL_BASE=/home/amar/app/perl5"
 #export LD_PRELOAD="/usr/local/src/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/:/opt/cuda/lib64"
 export WINEARCH=win32
+export ANDROID_HOME=$XDG_DATA_HOME/android/sdk
+PATH=$PATH:$ANDROID_HOME/tools
+export _Z_DATA="$XDG_DATA_HOME/z/.z"
 
 # Aliases
-function lcd { cd "$@"; pwd >! ~/.lcd; }
+function lcd { cd "$@"; pwd >! $XDG_DATA_HOME/.lcd; }
 
 alias sudo='sudo '
 alias cd='lcd'
@@ -53,8 +59,9 @@ alias co='xclip -selection clipboard -o'
 alias py='python'
 alias lt='/usr/bin/lt'
 alias sp='spawn '
-alias vv='spawn vim'
-alias vvx='spawn vim && exit'
+alias vv='spawn nvim'
+alias vvl='TERMINAL="st -f Inconsolata:size=24" spawn nvim'
+alias vvx='spawn nvim && exit'
 function vvcpp { spawn vim src/"$@".cpp include/"$@".h; }
 alias t='tree'
 alias top='htop'
@@ -67,7 +74,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 alias nicks='cat /home/amar/.irssi/nicklistfifo'
 
 # Initialisation
-if [ -f ~/.lcd ]; then cd "$(cat ~/.lcd)"; fi
+if [ -f $XDG_DATA_HOME/.lcd ]; then cd "$(cat $XDG_DATA_HOME/.lcd)"; fi
 
 # Plugins
 source /home/amar/app/zsh-plugins/z.sh

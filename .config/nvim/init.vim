@@ -26,7 +26,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'nicklasos/vim-jsx-riot'
 au BufNewFile,BufRead *.tag setlocal ft=javascript
 Plug 'wavded/vim-stylus'
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 let g:UltiSnipsExpandTrigger="<c-s>"
@@ -34,7 +34,8 @@ let g:UltiSnipsJumpForwardTrigger="<c-e>"
 let g:UltiSnipsJumpBackwardTrigger="<c-q>"
 Plug 'tikhomirov/vim-glsl'
 Plug 'tpope/vim-abolish'
-Plug 'suan/vim-instant-markdown'
+Plug 'neovim/node-host', { 'do': 'npm install' }
+Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 
 call plug#end()
 
@@ -69,6 +70,8 @@ autocmd Filetype tex setlocal linebreak wrap spell
 " TODO: Figure out why only this works
 au BufNewFile,BufRead *.tex setlocal linebreak wrap spell filetype=tex
 autocmd Filetype markdown setlocal linebreak wrap spell
+autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+autocmd FileType svg setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
 
 " Build
 "autocmd BufWritePost *.c make
@@ -106,6 +109,10 @@ nmap <leader>ne :NERDTreeTabsToggle<CR>
 nmap <leader>nf :NERDTreeFocusToggle<CR>
 
 nmap <leader>o :TagbarToggle<CR>
+
+" https://github.com/neovim/neovim/issues/3211
+map <F1> <del>
+map! <F1> <del>
 
 " Color scheme
 syntax on
