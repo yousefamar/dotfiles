@@ -19,6 +19,7 @@ Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr=1
 Plug 'scrooloose/syntastic'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+let g:syntastic_javascript_checkers=['eslint']
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'majutsushi/tagbar'
 Plug 'digitaltoad/vim-jade'
@@ -36,6 +37,8 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'tpope/vim-abolish'
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+Plug 'mattn/emmet-vim'
+let g:user_emmet_leader_key = '<C-s>'
 
 call plug#end()
 
