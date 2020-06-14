@@ -16,4 +16,10 @@
 #archey
 echo "Welcome Yousef, master of space and time!\n"
 #dropbox start
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx -bs
+setxkbmap -layout gb -option 'ctrl:nocaps' -option 'terminate:ctrl_alt_bksp'
+if [ -s ~/.Xmodmap ]; then
+	xmodmap ~/.Xmodmap
+fi
+[[ -z "$DISPLAY" && "$(fgconsole)" -eq 1 ]] && exec startx -bs
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
