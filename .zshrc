@@ -69,7 +69,7 @@ alias uz='unzip'
 alias mpv='mpv --input-file=/home/amar/.local/share/mpv/cmd-input'
 function ipi { curl ipinfo.io/"$@" }
 function cvii { converse-ii "$@" & }
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 
 alias nicks='cat /home/amar/.irssi/nicklistfifo'
 
