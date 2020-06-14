@@ -12,7 +12,6 @@
 !.gitconfig
 !.gitignore_global
 !.gitmodules
-!.npmrc
 !.xinitrc
 !.zlogin
 !.zlogout
