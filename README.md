@@ -11,6 +11,7 @@
 7. Install vim-plug `sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
 8. Copy files below
 9. `dot remote set-url origin git@github.com:yousefamar/dotfiles.git`
+10. `cd ~/app/zsh-plugins && wget https://raw.githubusercontent.com/rupa/z/master/z.sh`
 
 ## Stuff to manually scp over from an old system
 
