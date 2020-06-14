@@ -3,6 +3,11 @@
 !.gitignore
 !.zshrc
 !.config
+!.config/nvim/init.vim
+!.config/bspwm
+!.config/bspwm/bspwmrc
+!.config/sxhkd
+!.config/sxhkd/sxhkdrc
 !.local/share/mpv
 !.ssh
 !app/zsh-plugins
