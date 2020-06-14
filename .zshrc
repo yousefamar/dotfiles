@@ -6,7 +6,7 @@
 autoload -U colors && colors
 
 setopt prompt_subst
-source /home/amar/app/zsh-plugins/zsh-git-prompt/zshrc.sh
+source $HOME/app/zsh-plugins/zsh-git-prompt/zshrc.sh
 PROMPT='%2~ $(git_super_status)» '
 
 export TERMINAL="st"
@@ -22,24 +22,34 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export HISTORY_IGNORE=" *"
 
 # Environment variables
-PATH="$PATH:/home/amar/exec"
+PATH="$PATH:$HOME/exec"
 PATH="$PATH:/opt/cuda/bin"
-PATH="$PATH:/home/amar/app/perl5/bin"
-PATH="$PATH:/home/amar/.gem/ruby/2.4.0/bin"
+PATH="$PATH:$HOME/app/perl5/bin"
+PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
+PATH="$PATH:$HOME/.local/share/npm/bin"
+PATH="$PATH:/opt/texlive/2019/bin/x86_64-linux"
+PATH="$PATH:$HOME/app/git-fuzzy/bin"
 export PATH
-export PERL5LIB="/home/amar/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
-export PERL_LOCAL_LIB_ROOT="/home/amar/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
-export PERL_MB_OPT="--install_base \"/home/amar/app/perl5\""
-export PERL_MM_OPT="INSTALL_BASE=/home/amar/app/perl5"
+export PERL5LIB="$HOME/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
+export PERL_LOCAL_LIB_ROOT="$HOME/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
+export PERL_MB_OPT="--install_base \"$HOME/app/perl5\""
+export PERL_MM_OPT="INSTALL_BASE=$HOME/app/perl5"
 #export LD_PRELOAD="/usr/local/src/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/:/opt/cuda/lib64"
 export WINEARCH=win32
 export ANDROID_HOME=$XDG_DATA_HOME/android/sdk
 PATH=$PATH:$ANDROID_HOME/tools
 export _Z_DATA="$XDG_DATA_HOME/z/.z"
+export NODE_PATH="$HOME/.local/share/npm/lib/node_modules"
 
 # Aliases
 function lcd { cd "$@"; pwd >! $XDG_DATA_HOME/.lcd; }
+function pdfs {
+	for pdf in $@
+	do
+		mupdf $pdf &
+	done
+}
 
 alias sudo='sudo '
 alias cd='lcd'
@@ -51,13 +61,14 @@ alias la='ls -a --color'
 alias ll='ls -l --color'
 alias md='mkdir'
 alias g='git'
+alias gf='git fuzzy'
 alias v='nvim'
 alias sv='sudoedit'
 alias vlc='vlc --no-color'
 alias ci='xclip -selection clipboard'
 alias co='xclip -selection clipboard -o'
 alias py='python'
-alias lt='/usr/bin/lt'
+#alias lt='/usr/bin/lt'
 alias sp='spawn '
 alias vv='spawn nvim'
 alias vvl='TERMINAL="st -f Inconsolata:size=24" spawn nvim'
@@ -66,20 +77,22 @@ function vvcpp { spawn vim src/"$@".cpp include/"$@".h; }
 alias t='tree'
 alias top='htop'
 alias uz='unzip'
-alias mpv='mpv --input-file=/home/amar/.local/share/mpv/cmd-input'
+alias mpv='mpv --input-file=$HOME/.local/share/mpv/cmd-input'
 function ipi { curl ipinfo.io/"$@" }
 function cvii { converse-ii "$@" & }
 alias dot='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
+alias srv='/bin/sv'
+alias pdfs='pdfs '
 
-alias nicks='cat /home/amar/.irssi/nicklistfifo'
+alias nicks='cat $HOME/.irssi/nicklistfifo'
 
 # Initialisation
 if [ -f $XDG_DATA_HOME/.lcd ]; then cd "$(cat $XDG_DATA_HOME/.lcd)"; fi
 
 # Plugins
-source /home/amar/app/zsh-plugins/z.sh
-source /home/amar/app/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /home/amar/app/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $HOME/app/zsh-plugins/z.sh
+source $HOME/app/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/app/zsh-plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
@@ -110,8 +123,8 @@ source ${ZDOTDIR:-$HOME}/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zhistory
-HISTSIZE=100000
-SAVEHIST=10000000
+HISTSIZE=10000000
+SAVEHIST=1000000000
 setopt appendhistory extendedglob nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
@@ -129,7 +142,14 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/amar/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export NVM_DIR="$HOME/.config"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
