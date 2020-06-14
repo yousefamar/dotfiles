@@ -13,13 +13,14 @@ let g:ctrlp_prompt_mappings = {
 Plug 'airblade/vim-gitgutter'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'plasticboy/vim-markdown'
-Plug 'gerw/vim-latex-suite'
+Plug 'lervag/vimtex'
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr=1
 Plug 'scrooloose/syntastic'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'majutsushi/tagbar'
 Plug 'digitaltoad/vim-jade'
@@ -30,15 +31,21 @@ Plug 'wavded/vim-stylus'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<c-s>"
-let g:UltiSnipsJumpForwardTrigger="<c-e>"
-let g:UltiSnipsJumpBackwardTrigger="<c-q>"
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
 Plug 'tikhomirov/vim-glsl'
 Plug 'tpope/vim-abolish'
 Plug 'neovim/node-host', { 'do': 'npm install' }
-Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+"Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 Plug 'mattn/emmet-vim'
 let g:user_emmet_leader_key = '<C-s>'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'Ron89/thesaurus_query.vim'
+let g:tq_openoffice_en_file="~/data/thesaurus/th_en_US_new"
+Plug 'junegunn/vim-easy-align'
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 call plug#end()
 
