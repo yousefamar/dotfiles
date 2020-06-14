@@ -20,6 +20,8 @@ setxkbmap -layout gb -option 'ctrl:nocaps' -option 'terminate:ctrl_alt_bksp'
 if [ -s ~/.Xmodmap ]; then
 	xmodmap ~/.Xmodmap
 fi
-[[ -z "$DISPLAY" && "$(fgconsole)" -eq 1 ]] && exec startx -bs
+if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
+  exec startx -bs
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
