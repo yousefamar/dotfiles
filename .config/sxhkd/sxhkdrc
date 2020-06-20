@@ -12,7 +12,7 @@ super + @space
 
 # browser
 super + numbersign
-	google-chrome-stable --force-device-scale-factor=1.5
+	brave-browser-stable
 
 # make sxhkd reload its configuration files:
 super + Escape

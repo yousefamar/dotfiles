@@ -14,6 +14,8 @@
 10. `cd ~/app/zsh-plugins && wget https://raw.githubusercontent.com/rupa/z/master/z.sh`
 11. `md ~/.local/share/z`
 12. Install kitty `curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin`
+13. Install own scripts `md ~/proj/code && cd ~/proj/code && g clone https://github.com/yousefamar/misc-scripts.git misc && cd`
+14. Install browser
 
 ## Stuff to manually scp over from an old system
 
