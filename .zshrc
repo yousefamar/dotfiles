@@ -9,7 +9,7 @@ setopt prompt_subst
 source $HOME/app/zsh-plugins/zsh-git-prompt/zshrc.sh
 PROMPT='%2~ $(git_super_status)» '
 
-export TERMINAL="st"
+export TERMINAL="kitty"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export BROWSER="google-chrome-stable"
@@ -29,6 +29,7 @@ PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
 PATH="$PATH:$HOME/.local/share/npm/bin"
 PATH="$PATH:/opt/texlive/2019/bin/x86_64-linux"
 PATH="$PATH:$HOME/app/git-fuzzy/bin"
+PATH="$PATH:$HOME/.local/kitty.app/bin"
 export PATH
 export PERL5LIB="$HOME/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL_LOCAL_LIB_ROOT="$HOME/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
@@ -71,7 +72,7 @@ alias py='python'
 #alias lt='/usr/bin/lt'
 alias sp='spawn '
 alias vv='spawn nvim'
-alias vvl='TERMINAL="st -f Inconsolata:size=24" spawn nvim'
+alias vvl='TERMINAL="$TERMINAL -f Inconsolata:size=24" spawn nvim'
 alias vvx='spawn nvim && exit'
 function vvcpp { spawn vim src/"$@".cpp include/"$@".h; }
 alias t='tree'
