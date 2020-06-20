@@ -12,7 +12,7 @@ PROMPT='%2~ $(git_super_status)» '
 export TERMINAL="kitty"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="google-chrome-stable"
+export BROWSER="brave-browser-stable"
 #"uzbl-browser"
 export PAGER="less"
 export II_PASSWORD=""
@@ -30,6 +30,7 @@ PATH="$PATH:$HOME/.local/share/npm/bin"
 PATH="$PATH:/opt/texlive/2019/bin/x86_64-linux"
 PATH="$PATH:$HOME/app/git-fuzzy/bin"
 PATH="$PATH:$HOME/.local/kitty.app/bin"
+PATH="$PATH:/snap/bin"
 export PATH
 export PERL5LIB="$HOME/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL_LOCAL_LIB_ROOT="$HOME/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
@@ -84,6 +85,7 @@ function cvii { converse-ii "$@" & }
 alias dot='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 alias srv='/bin/sv'
 alias pdfs='pdfs '
+alias wa='$BROWSER --app=https://web.whatsapp.com/'
 
 alias nicks='cat $HOME/.irssi/nicklistfifo'
 
