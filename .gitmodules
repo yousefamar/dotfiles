@@ -4,3 +4,6 @@
 [submodule "app/zsh-plugins/zsh-git-prompt"]
 	path = app/zsh-plugins/zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule "app/polybar-modules/polybar-spotify"]
+	path = app/polybar-modules/polybar-spotify
+	url = git@github.com:Jvanrhijn/polybar-spotify.git

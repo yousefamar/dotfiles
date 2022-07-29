@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'plasticboy/vim-markdown'
 Plug 'lervag/vimtex'
+let g:tex_flavor = 'latex'
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr=1
@@ -21,7 +22,7 @@ Plug 'scrooloose/syntastic'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_python_python_exec = '/usr/bin/python3'
-Plug 'severin-lemaignan/vim-minimap'
+Plug 'wfxr/minimap.vim'
 Plug 'majutsushi/tagbar'
 Plug 'digitaltoad/vim-jade'
 Plug 'digitaltoad/vim-pug'
@@ -46,6 +47,27 @@ let g:tq_openoffice_en_file="~/data/thesaurus/th_en_US_new"
 Plug 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+Plug 'posva/vim-vue'
+Plug 'tpope/vim-fugitive'
+"Plug 'tveskag/nvim-blame-line'
+"autocmd BufEnter * EnableBlameLine
+Plug 'APZelos/blamer.nvim'
+let g:blamer_enabled = 1
+Plug 'leafOfTree/vim-svelte-plugin'
+let g:vim_svelte_plugin_use_pug = 1
+let g:vim_svelte_plugin_use_typescript = 1
+let g:vim_svelte_plugin_use_sass = 1
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+" set filetypes as typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd Filetype typescriptreact setlocal expandtab smartindent tabstop=2 shiftwidth=2
+Plug 'sbdchd/neoformat'
+autocmd BufWritePre *.vue Neoformat
+autocmd BufWritePre *.ts Neoformat
+"autocmd BufWritePre *.js Neoformat
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1
 
 call plug#end()
 
@@ -72,6 +94,9 @@ set modelines=1
 "filetype plugin indent on
 
 autocmd Filetype ls setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype typescript setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2
+autocmd Filetype vue setlocal expandtab tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead package.json setlocal expandtab tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.md setf markdown
 au BufNewFile,BufRead *.lsx setf ls

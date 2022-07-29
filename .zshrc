@@ -25,12 +25,16 @@ export HISTORY_IGNORE=" *"
 PATH="$PATH:$HOME/exec"
 PATH="$PATH:/opt/cuda/bin"
 PATH="$PATH:$HOME/app/perl5/bin"
-PATH="$PATH:$HOME/.gem/ruby/2.4.0/bin"
+PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
 PATH="$PATH:$HOME/.local/share/npm/bin"
 PATH="$PATH:/opt/texlive/2019/bin/x86_64-linux"
 PATH="$PATH:$HOME/app/git-fuzzy/bin"
 PATH="$PATH:$HOME/.local/kitty.app/bin"
 PATH="$PATH:/snap/bin"
+PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
+PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/.ebcli-virtual-env/executables"
+
 export PATH
 export PERL5LIB="$HOME/app/perl5/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL_LOCAL_LIB_ROOT="$HOME/app/perl5${PERL_LOCAL_LIB_ROOT+:}$PERL_LOCAL_LIB_ROOT"
@@ -39,10 +43,12 @@ export PERL_MM_OPT="INSTALL_BASE=$HOME/app/perl5"
 #export LD_PRELOAD="/usr/local/src/stderred/build/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib/:/opt/cuda/lib64"
 export WINEARCH=win32
-export ANDROID_HOME=$XDG_DATA_HOME/android/sdk
-PATH=$PATH:$ANDROID_HOME/tools
+export ANDROID_HOME="$HOME/app/Android/Sdk"
+PATH="$PATH:$ANDROID_HOME/tools"
+PATH="$PATH:$ANDROID_HOME/platform-tools"
 export _Z_DATA="$XDG_DATA_HOME/z/.z"
 export NODE_PATH="$HOME/.local/share/npm/lib/node_modules"
+#export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share"
 
 # Aliases
 function lcd { cd "$@"; pwd >! $XDG_DATA_HOME/.lcd; }
@@ -85,9 +91,9 @@ function cvii { converse-ii "$@" & }
 alias dot='/usr/bin/git --git-dir=$HOME/.dot/ --work-tree=$HOME'
 alias srv='/bin/sv'
 alias pdfs='pdfs '
-alias wa='$BROWSER --app=https://web.whatsapp.com/'
 
 alias nicks='cat $HOME/.irssi/nicklistfifo'
+alias icat="kitty +kitten icat"
 
 # Initialisation
 if [ -f $XDG_DATA_HOME/.lcd ]; then cd "$(cat $XDG_DATA_HOME/.lcd)"; fi
@@ -156,3 +162,21 @@ export NVM_DIR="$HOME/.config"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Created by `userpath` on 2020-06-21 19:44:45
+export PATH="$PATH:/home/amar/.local/bin"
+#export XDG_DATA_DIRS="${XDG_DATA_DIRS}:/var/lib/snapd/desktop:/usr/share/applications"
+
+export GDK_SCALE=2
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=2
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/amar/proj/ef/krew/lambdas/aws/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/amar/proj/ef/krew/lambdas/aws/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/amar/proj/ef/krew/lambdas/aws/node_modules/tabtab/.completions/sls.zsh ]] && . /home/amar/proj/ef/krew/lambdas/aws/node_modules/tabtab/.completions/sls.zsh
+source /home/amar/.config/broot/launcher/bash/br

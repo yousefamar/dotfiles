@@ -8,11 +8,15 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	dmenu_run -fn 'Inconsolata:size=18'
 
 # browser
 super + numbersign
-	brave-browser-stable
+	brave-browser-stable --force-device-scale-factor=1.8
+
+# notes
+super + apostrophe
+	brain
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -123,3 +127,33 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+XF86AudioLowerVolume
+	amixer set Master 10%-
+
+XF86AudioRaiseVolume
+	amixer set Master 10%+
+
+XF86MonBrightnessUp
+	echo $(($(cat /sys/class/backlight/intel_backlight/brightness) + $(cat /sys/class/backlight/intel_backlight/max_brightness) / 10)) | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+XF86MonBrightnessDown
+	echo $(($(cat /sys/class/backlight/intel_backlight/brightness) - $(cat /sys/class/backlight/intel_backlight/max_brightness) / 10)) | sudo tee /sys/class/backlight/intel_backlight/brightness
+
+XF86AudioPlay
+	playerctl play-pause
+
+ctrl + XF86AudioPlay
+	playerctl next
+
+ctrl + XF86AudioLowerVolume
+	playerctl volume -0.1
+
+ctrl + XF86AudioRaiseVolume
+	playerctl volume +0.1
+
+Print
+	flameshot gui -r | xclip -selection clipboard -t image/png && killall flameshot

@@ -10,6 +10,7 @@
 	a = add
 	c = commit
 	cm = commit -m
+	p = push
 	poa = push -u origin --all
 	rao = remote add origin
 	rau = remote add upstream
@@ -23,7 +24,7 @@
 	up = !git fetch && git rebase --autostash FETCH_HEAD
 [merge]
 	tool = nvimdiff
-	ff = false
+	#ff = false
 [mergetool]
 	prompt = true
 [mergetool "nvimdiff"]
