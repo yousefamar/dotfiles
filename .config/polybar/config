@@ -78,7 +78,7 @@ font-2 = amarbar:style=Regular:pixelsize=16;3
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = spotify wlan eth backlight-acpi temperature cpu memory pulseaudio battery date
+modules-right = spotify syncthing wlan eth backlight-acpi temperature cpu memory pulseaudio battery date
 ;filesystem xkeyboard powermenu
 
 tray-position = right
@@ -101,7 +101,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:300:...%
+label = %title:0:80:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -125,6 +125,14 @@ interval = 1
 #format-prefix = ${icons.spotify}
 format = <label>
 exec = python3 $HOME/app/polybar-modules/polybar-spotify/spotify_status.py --playpause '▶,⎉' --format '{play_pause} {artist} - {song}' --playpause-font=3 --trunclen=100
+
+[module/syncthing]
+type = custom/script
+interval = 1
+#format-prefix = ${icons.spotify}
+format = <label>
+exec = syncthing-state
+click-left = syncthing-state toggle
 
 [module/filesystem]
 type = internal/fs
